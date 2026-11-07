@@ -11,6 +11,8 @@ window.onload = function () {
     pop.addEventListener("click", function() {
         var text = "Tog bort " + stack.pop();
         alert(text);
+        var top = stack.peek();
+        display.innerHTML = top === undefined ? "n/a" : top;
     });
 
     push.addEventListener("click", function() {
