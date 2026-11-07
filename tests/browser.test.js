@@ -34,3 +34,14 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+describe('Clicking "Poppa stacken!"', () => {
+    it('should show n/a when the stack becomes empty', async () => {
+        let pop = await driver.findElement(By.id('pop'));
+        await pop.click();
+        let alert = await driver.switchTo().alert();
+        await alert.accept();
+        let display = await driver.findElement(By.id('top_of_stack')).getText();
+        expect(display).toEqual("n/a");
+    });
+});
